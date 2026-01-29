@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Giá Chữ Ký Số & Hóa Đơn Điện Tử - Nhà cung cấp hàng đầu Việt Nam</title>
+    <meta name="description" content="Đại lý cấp 1 chuyên cung cấp giải pháp Chữ ký số, Hóa đơn điện tử và BHXH uy tín hàng đầu Việt Nam.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); }
+        .hero-gradient { background: radial-gradient(circle at top right, #3b82f6, #1e3a8a); }
+        .price-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .price-card:hover { transform: translateY(-8px); }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade { animation: fadeIn 0.4s ease-out forwards; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="glass-nav sticky top-0 z-50 border-b border-slate-200/50">
+        <div class="container mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-200">
+                    <i class="fas fa-signature text-white text-lg"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-xl tracking-tight text-slate-800 uppercase leading-none">DỊCH VỤ SỐ VIỆT NAM</span>
+                    <span class="text-[10px] uppercase font-bold text-slate-400 tracking-[0.2em] mt-1">Nhà cung cấp hàng đầu Việt Nam</span>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#pricing" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition">Chữ ký số</a>
+                <a href="#invoice" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition">Hóa đơn</a>
+                <a href="#bhxh" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition">BHXH Điện tử</a>
+                <a href="tel:0979936336" class="text-sm font-bold text-blue-600 flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full border border-blue-100 hover:bg-blue-100 transition">
+                    <i class="fas fa-phone-alt"></i> 
+                    <span>0979.936.336</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-24 pb-36 text-white relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-1.5 rounded-full text-xs font-bold mb-8 animate-fade uppercase tracking-widest">
+                <i class="fas fa-award text-yellow-400"></i> ĐỐI TÁC CHIẾN LƯỢC TOÀN QUỐC
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">
+                Giải Pháp Số Cho Doanh Nghiệp <br class="hidden md:block"> 
+                <span class="text-blue-200 text-3xl md:text-5xl italic">Uy Tín - Nhanh Chóng - Tiết Kiệm</span>
+            </h1>
+            <p class="text-lg text-blue-100 mb-10 max-w-2xl mx-auto opacity-90">
+                Cung cấp Chữ ký số, Hóa đơn điện tử, BHXH chính hãng. Hỗ trợ kỹ thuật 24/7 từ đội ngũ chuyên gia hàng đầu.
+            </p>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-slate-50 to-transparent"></div>
+    </section>
+
+    <!-- 1. CHỮ KÝ SỐ SECTION -->
+    <section id="pricing" class="py-24 -mt-20">
+        <div class="container mx-auto px-6">
+            <div class="bg-white rounded-[40px] shadow-2xl shadow-slate-200/60 p-8 md:p-14 relative z-20 border border-slate-100">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-extrabold text-slate-900 mb-4 uppercase tracking-tight">Dịch Vụ Chữ Ký Số</h2>
+                    <div class="w-20 h-1.5 bg-blue-600 mx-auto rounded-full mb-6"></div>
+                </div>
+
+                <div class="flex flex-col gap-10 mb-12">
+                    <div class="flex flex-wrap justify-center gap-3 bg-slate-50 p-2 rounded-3xl border border-slate-100 max-w-3xl mx-auto">
+                        <button onclick="switchProvider('fastca')" class="ca-tab px-8 py-3 rounded-2xl font-bold text-sm transition-all">FASTCA</button>
+                        <button onclick="switchProvider('ica')" class="ca-tab px-8 py-3 rounded-2xl font-bold text-sm transition-all">I-CA</button>
+                        <button onclick="switchProvider('viettel')" class="ca-tab px-8 py-3 rounded-2xl font-bold text-sm transition-all">VIETTEL</button>
+                        <button onclick="switchProvider('fpt')" class="ca-tab px-8 py-3 rounded-2xl font-bold text-sm transition-all">FPT CA</button>
+                    </div>
+
+                    <div class="flex justify-center items-center gap-8 bg-white p-5 rounded-3xl border border-slate-200 w-fit mx-auto shadow-sm">
+                        <span id="label-new" class="text-xs font-black uppercase tracking-widest">Đăng Ký Mới</span>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="mode-toggle" class="sr-only peer" onchange="toggleMode()">
+                            <div class="w-16 h-9 bg-slate-200 rounded-full peer-checked:bg-blue-600 transition-colors relative">
+                                <div class="absolute left-1 top-1 bg-white w-7 h-7 rounded-full shadow-lg transition-transform translate-x-0 peer-checked:translate-x-7"></div>
+                            </div>
+                        </label>
+                        <span id="label-renew" class="text-xs font-black uppercase tracking-widest">Gia Hạn</span>
+                    </div>
+                </div>
+
+                <div id="ca-price-container" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. HÓA ĐƠN ĐIỆN TỬ SECTION -->
+    <section id="invoice" class="py-24 bg-slate-100/50 border-y border-slate-200">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold text-slate-900 mb-4 uppercase">Hóa Đơn Điện Tử</h2>
+                <div class="w-20 h-1.5 bg-orange-500 mx-auto rounded-full mb-8"></div>
+                
+                <!-- Chọn NCC Hóa đơn -->
+                <div class="flex justify-center gap-4 mb-10">
+                    <button onclick="switchInvProvider('easy')" class="inv-tab px-6 py-2 rounded-full font-bold text-sm border-2 transition-all">EasyInvoice</button>
+                    <button onclick="switchInvProvider('viettel_inv')" class="inv-tab px-6 py-2 rounded-full font-bold text-sm border-2 transition-all">Viettel Sinvoice</button>
+                </div>
+
+                <div class="inline-flex items-center gap-3 bg-white text-slate-700 px-8 py-4 rounded-2xl font-bold text-lg shadow-sm border border-slate-200">
+                    <i class="fas fa-rocket text-orange-500"></i>
+                    Phí khởi tạo hệ thống: <span id="inv-setup-fee">500.000đ</span>
+                </div>
+            </div>
+            <div id="invoice-grid" class="grid grid-cols-1 md:grid-cols-4 gap-6"></div>
+        </div>
+    </section>
+
+    <!-- 3. BHXH ĐIỆN TỬ SECTION -->
+    <section id="bhxh" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold text-slate-900 mb-4 uppercase">BHXH Điện Tử xCyber Care</h2>
+                <div class="w-20 h-1.5 bg-emerald-500 mx-auto rounded-full mb-6"></div>
+                <p class="text-slate-500 font-medium">Phần mềm kê khai bảo hiểm xã hội chính thức của I-VAN</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Nhóm X < 100 -->
+                <div class="bg-emerald-50/50 rounded-[40px] p-8 md:p-10 border border-emerald-100">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 bg-emerald-600 rounded-xl flex items-center justify-center text-white text-xl">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-emerald-900 tracking-tight uppercase">Gói cho Doanh nghiệp ít lao động (X < 100)</h3>
+                    </div>
+                    <div id="bhxh-s-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+                </div>
+
+                <!-- Nhóm X > 100 -->
+                <div class="bg-blue-50/50 rounded-[40px] p-8 md:p-10 border border-blue-100">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white text-xl">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900 tracking-tight uppercase">Gói cho Doanh nghiệp nhiều lao động (X > 100)</h3>
+                    </div>
+                    <div id="bhxh-b-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-20 px-6 border-t border-white/5">
+        <div class="container mx-auto text-center">
+            <div class="mb-10">
+                <div class="text-white font-bold text-lg uppercase tracking-[0.3em] mb-4">Liên hệ ngay để nhận chiết khấu tốt nhất</div>
+                <a href="tel:0979936336" class="inline-block text-blue-400 font-black text-4xl md:text-5xl tracking-tighter hover:scale-105 transition-transform">0979.936.336</a>
+            </div>
+            <p class="text-xs uppercase tracking-[0.2em] font-bold opacity-50">Dịch Vụ Số Việt Nam - Đồng hành cùng chuyển đổi số doanh nghiệp</p>
+        </div>
+    </footer>
+
+    <script>
+        const pricingData = {
+            // Dữ liệu Chữ ký số
+            fastca: {
+                new: [{t:'Gói 1 Năm', p:'1.099.000đ', n:'Tặng Token mới'}, {t:'Gói 2 Năm', p:'1.399.000đ', n:'Tặng Token mới'}, {t:'Gói 3 Năm', p:'1.599.000đ', n:'Tặng Token mới', pop:true}],
+                renew: [{t:'Gói 1 Năm', p:'899.000đ', n:'Gia hạn nhanh'}, {t:'Gói 2 Năm', p:'1.399.000đ', n:'Gia hạn nhanh'}, {t:'Gói 3 Năm', p:'1.599.000đ', n:'Gia hạn nhanh', pop:true}]
+            },
+            ica: {
+                new: [{t:'Gói 1 Năm', p:'1.099.000đ', n:'Token I-CA mới'}, {t:'Gói 2 Năm', p:'1.399.000đ', n:'Token I-CA mới'}, {t:'Gói 3 Năm', p:'1.599.000đ', n:'Token I-CA mới', pop:true}],
+                renew: [{t:'Gói 1 Năm', p:'899.000đ', n:'Hỗ trợ từ xa'}, {t:'Gói 2 Năm', p:'1.399.000đ', n:'Hỗ trợ từ xa'}, {t:'Gói 3 Năm', p:'1.599.000đ', n:'Hỗ trợ từ xa', pop:true}]
+            },
+            viettel: {
+                new: [{t:'Gói 1 Năm', p:'1.499.000đ', n:'Viettel-CA chính hãng'}, {t:'Gói 2 Năm', p:'1.999.000đ', n:'Viettel-CA chính hãng'}, {t:'Gói 3 Năm', p:'2.199.000đ', n:'Viettel-CA chính hãng', pop:true}],
+                renew: [{t:'Gói 1 Năm', p:'1.099.000đ', n:'Chính hãng Viettel'}, {t:'Gói 2 Năm', p:'1.999.000đ', n:'Chính hãng Viettel'}, {t:'Gói 3 Năm', p:'2.199.000đ', n:'Chính hãng Viettel', pop:true}]
+            },
+            fpt: {
+                new: [{t:'Gói 1 Năm', p:'1.499.000đ', n:'Bảo mật FPT'}, {t:'Gói 2 Năm', p:'1.999.000đ', n:'Bảo mật FPT'}, {t:'Gói 3 Năm', p:'2.199.000đ', n:'Bảo mật FPT', pop:true}],
+                renew: [{t:'Gói 1 Năm', p:'1.099.000đ', n:'Nhanh gọn'}, {t:'Gói 2 Năm', p:'1.999.000đ', n:'Nhanh gọn'}, {t:'Gói 3 Năm', p:'2.199.000đ', n:'Nhanh gọn', pop:true}]
+            },
+            // Dữ liệu Hóa đơn
+            invoices: {
+                easy: {
+                    fee: '500.000đ',
+                    items: [{n:'Gói 300 Số', p:'460.000đ'}, {n:'Gói 500 Số', p:'650.000đ'}, {n:'Gói 1.000 Số', p:'1.100.000đ', pop:true}, {n:'Gói 3.000 Số', p:'2.300.000đ'}]
+                },
+                viettel_inv: {
+                    fee: '500.000đ',
+                    items: [
+                        {n:'Gói 300 Số', p:'429.000đ'}, 
+                        {n:'Gói 500 Số', p:'583.000đ'}, 
+                        {n:'Gói 1.000 Số', p:'913.000đ', pop:true},
+                        {n:'Gói 2.000 Số', p:'1.375.000đ'},
+                        {n:'Gói 3.000 Số', p:'1.936.000đ'},
+                        {n:'Gói 5.000 Số', p:'2.937.000đ'}
+                    ]
+                }
+            },
+            // Dữ liệu BHXH
+            bhxh: {
+                small: [
+                    {t:'Gói 1 Năm', code:'xCare-S-1Y', p:'480.000đ'},
+                    {t:'Gói 2 Năm', code:'xCare-S-2Y', p:'880.000đ'},
+                    {t:'Gói 3 Năm', code:'xCare-S-3Y', p:'1.180.000đ'}
+                ],
+                big: [
+                    {t:'Gói 1 Năm', code:'xCare-B-1Y', p:'1.280.000đ'},
+                    {t:'Gói 2 Năm', code:'xCare-B-2Y', p:'2.280.000đ'},
+                    {t:'Gói 3 Năm', code:'xCare-B-3Y', p:'2.680.000đ'}
+                ]
+            }
+        };
+
+        let currentCa = 'fastca';
+        let currentInv = 'easy';
+        let currentMode = 'new';
+
+        function switchProvider(p) { currentCa = p; renderCA(); }
+        function switchInvProvider(p) { currentInv = p; renderInv(); }
+        function toggleMode() { currentMode = document.getElementById('mode-toggle').checked ? 'renew' : 'new'; renderCA(); }
+
+        function renderCA() {
+            document.querySelectorAll('.ca-tab').forEach(btn => {
+                const key = btn.innerText.toLowerCase().replace(' ca', '').replace(' ', '');
+                btn.className = `ca-tab px-8 py-3 rounded-2xl font-bold text-sm transition-all ${currentCa === key ? 'bg-blue-600 text-white shadow-xl scale-105' : 'text-slate-500 hover:text-slate-800 bg-white border border-slate-200'}`;
+            });
+            document.getElementById('label-new').className = `text-xs font-black uppercase tracking-widest ${currentMode === 'new' ? 'text-blue-600' : 'text-slate-400'}`;
+            document.getElementById('label-renew').className = `text-xs font-black uppercase tracking-widest ${currentMode === 'renew' ? 'text-blue-600' : 'text-slate-400'}`;
+            
+            const cont = document.getElementById('ca-price-container');
+            cont.innerHTML = pricingData[currentCa][currentMode].map(item => `
+                <div class="price-card animate-fade border ${item.pop ? 'border-blue-500 bg-blue-50/30' : 'border-slate-100 bg-white'} rounded-[32px] p-10 flex flex-col relative shadow-sm">
+                    ${item.pop ? '<span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-5 py-1.5 rounded-full text-[10px] font-black tracking-widest uppercase">Ưu đãi nhất</span>' : ''}
+                    <h3 class="text-slate-400 font-black uppercase text-[10px] tracking-widest mb-3">${item.t}</h3>
+                    <div class="text-4xl font-black text-slate-900 mb-8">${item.p}</div>
+                    <div class="mb-10 flex-grow text-sm text-slate-700 font-bold italic flex items-center gap-2">
+                        <i class="fas fa-check-circle text-blue-500"></i> ${item.n}
+                    </div>
+                    <a href="tel:0979936336" class="text-center w-full py-5 rounded-2xl font-black ${item.pop ? 'bg-blue-600 text-white' : 'bg-slate-900 text-white hover:bg-slate-800'} transition-all">ĐĂNG KÝ</a>
+                </div>
+            `).join('');
+        }
+
+        function renderInv() {
+            document.querySelectorAll('.inv-tab').forEach(btn => {
+                const isEasy = btn.innerText.includes('Easy');
+                const active = (currentInv === 'easy' && isEasy) || (currentInv === 'viettel_inv' && !isEasy);
+                btn.className = `inv-tab px-6 py-2 rounded-full font-bold text-sm border-2 transition-all ${active ? 'bg-orange-500 text-white border-orange-500 shadow-lg' : 'bg-white text-slate-500 border-slate-200 hover:border-orange-500'}`;
+            });
+            document.getElementById('inv-setup-fee').innerText = pricingData.invoices[currentInv].fee;
+            
+            const cont = document.getElementById('invoice-grid');
+            cont.innerHTML = pricingData.invoices[currentInv].items.map(item => `
+                <div class="bg-white border ${item.pop ? 'border-orange-400 ring-2 ring-orange-100' : 'border-slate-200'} rounded-3xl p-6 shadow-md price-card flex flex-col items-center text-center">
+                    <div class="text-orange-600 font-black text-[10px] tracking-widest mb-2 uppercase">${item.n}</div>
+                    <div class="text-2xl font-black text-slate-900 mb-4">${item.p}</div>
+                    <a href="tel:0979936336" class="w-full py-3 ${item.pop ? 'bg-orange-500' : 'bg-slate-900'} text-white rounded-xl font-black text-xs transition-all">CHỌN</a>
+                </div>
+            `).join('');
+        }
+
+        function renderBHXH() {
+            const renderItem = item => `
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm text-center">
+                    <div class="text-slate-400 font-bold text-[10px] mb-1">${item.code}</div>
+                    <div class="font-black text-slate-800 mb-2">${item.t}</div>
+                    <div class="text-xl font-black text-emerald-600 mb-4">${item.p}</div>
+                    <a href="tel:0979936336" class="inline-block px-6 py-2 bg-slate-900 text-white text-[10px] font-bold rounded-full hover:bg-emerald-600 transition-colors">ĐĂNG KÝ</a>
+                </div>
+            `;
+            document.getElementById('bhxh-s-grid').innerHTML = pricingData.bhxh.small.map(renderItem).join('');
+            document.getElementById('bhxh-b-grid').innerHTML = pricingData.bhxh.big.map(renderItem).join('');
+        }
+
+        window.onload = () => { renderCA(); renderInv(); renderBHXH(); };
+    </script>
+</body>
+</html>
