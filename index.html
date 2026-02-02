@@ -110,9 +110,10 @@
                 <div class="w-20 h-1.5 bg-orange-500 mx-auto rounded-full mb-8"></div>
                 
                 <!-- Chọn NCC Hóa đơn -->
-                <div class="flex justify-center gap-4 mb-10">
+                <div class="flex flex-wrap justify-center gap-3 mb-10">
                     <button onclick="switchInvProvider('easy')" class="inv-tab px-6 py-2 rounded-full font-bold text-sm border-2 transition-all">EasyInvoice</button>
                     <button onclick="switchInvProvider('viettel_inv')" class="inv-tab px-6 py-2 rounded-full font-bold text-sm border-2 transition-all">Viettel Sinvoice</button>
+                    <button onclick="switchInvProvider('cyber_bill')" class="inv-tab px-6 py-2 rounded-full font-bold text-sm border-2 transition-all">xCyber Bill</button>
                 </div>
 
                 <div class="inline-flex items-center gap-3 bg-white text-slate-700 px-8 py-4 rounded-2xl font-bold text-lg shadow-sm border border-slate-200">
@@ -120,7 +121,7 @@
                     Phí khởi tạo hệ thống: <span id="inv-setup-fee">500.000đ</span>
                 </div>
             </div>
-            <div id="invoice-grid" class="grid grid-cols-1 md:grid-cols-4 gap-6"></div>
+            <div id="invoice-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
         </div>
     </section>
 
@@ -140,7 +141,7 @@
                         <div class="w-12 h-12 bg-emerald-600 rounded-xl flex items-center justify-center text-white text-xl">
                             <i class="fas fa-users"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-emerald-900 tracking-tight uppercase">Gói cho Doanh nghiệp ít lao động (X < 100)</h3>
+                        <h3 class="text-xl font-bold text-emerald-900 tracking-tight uppercase">Gói Doanh nghiệp ít lao động (X < 100)</h3>
                     </div>
                     <div id="bhxh-s-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
                 </div>
@@ -151,7 +152,7 @@
                         <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white text-xl">
                             <i class="fas fa-building"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-blue-900 tracking-tight uppercase">Gói cho Doanh nghiệp nhiều lao động (X > 100)</h3>
+                        <h3 class="text-xl font-bold text-blue-900 tracking-tight uppercase">Gói Doanh nghiệp nhiều lao động (X > 100)</h3>
                     </div>
                     <div id="bhxh-b-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
                 </div>
@@ -205,6 +206,19 @@
                         {n:'Gói 3.000 Số', p:'1.936.000đ'},
                         {n:'Gói 5.000 Số', p:'2.937.000đ'}
                     ]
+                },
+                cyber_bill: {
+                    fee: '500.000đ',
+                    items: [
+                        {n:'Gói 200 Số (xBill-200)', p:'380.000đ'},
+                        {n:'Gói 300 Số (xBill-300)', p:'480.000đ'},
+                        {n:'Gói 500 Số (xBill-500)', p:'750.000đ'},
+                        {n:'Gói 1.000 Số (xBill-1K)', p:'1.200.000đ', pop:true},
+                        {n:'Gói 3.000 Số (xBill-3K)', p:'2.400.000đ'},
+                        {n:'Gói 5.000 Số (xBill-5K)', p:'3.000.000đ'},
+                        {n:'Gói 10.000 Số (xBill-10K)', p:'5.000.000đ'},
+                        {n:'Gói 30.000 Số (xBill-30K)', p:'9.000.000đ'}
+                    ]
                 }
             },
             // Dữ liệu BHXH
@@ -254,8 +268,10 @@
 
         function renderInv() {
             document.querySelectorAll('.inv-tab').forEach(btn => {
-                const isEasy = btn.innerText.includes('Easy');
-                const active = (currentInv === 'easy' && isEasy) || (currentInv === 'viettel_inv' && !isEasy);
+                const text = btn.innerText.toLowerCase();
+                const active = (currentInv === 'easy' && text.includes('easy')) || 
+                               (currentInv === 'viettel_inv' && text.includes('viettel')) ||
+                               (currentInv === 'cyber_bill' && text.includes('cyber'));
                 btn.className = `inv-tab px-6 py-2 rounded-full font-bold text-sm border-2 transition-all ${active ? 'bg-orange-500 text-white border-orange-500 shadow-lg' : 'bg-white text-slate-500 border-slate-200 hover:border-orange-500'}`;
             });
             document.getElementById('inv-setup-fee').innerText = pricingData.invoices[currentInv].fee;
@@ -263,7 +279,7 @@
             const cont = document.getElementById('invoice-grid');
             cont.innerHTML = pricingData.invoices[currentInv].items.map(item => `
                 <div class="bg-white border ${item.pop ? 'border-orange-400 ring-2 ring-orange-100' : 'border-slate-200'} rounded-3xl p-6 shadow-md price-card flex flex-col items-center text-center">
-                    <div class="text-orange-600 font-black text-[10px] tracking-widest mb-2 uppercase">${item.n}</div>
+                    <div class="text-orange-600 font-black text-[10px] tracking-widest mb-2 uppercase leading-tight">${item.n}</div>
                     <div class="text-2xl font-black text-slate-900 mb-4">${item.p}</div>
                     <a href="tel:0979936336" class="w-full py-3 ${item.pop ? 'bg-orange-500' : 'bg-slate-900'} text-white rounded-xl font-black text-xs transition-all">CHỌN</a>
                 </div>
